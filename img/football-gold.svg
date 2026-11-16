@@ -1,10 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
-  <title>Sample gold football illustration</title>
-  <rect width="640" height="400" fill="#5c0a16"/>
-  <rect x="16" y="16" width="608" height="368" fill="none" stroke="#FFB81C" stroke-width="3"/>
-  <g transform="rotate(-16 320 188)">
-    <ellipse cx="320" cy="188" rx="196" ry="104" fill="#c9843a"/>
-    <path fill="none" stroke="#1a0a0c" stroke-width="6" stroke-linecap="round" d="M320 118v140M296 150h48M296 184h48M296 218h48"/>
+  <title>Sample vintage football illustration</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8d1830"/>
+      <stop offset="1" stop-color="#3c0711"/>
+    </linearGradient>
+    <radialGradient id="wash" cx="18%" cy="0%" r="75%">
+      <stop offset="0" stop-color="#ff8a96" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#ff8a96" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="leather" cx="40%" cy="30%" r="72%">
+      <stop offset="0" stop-color="#f0c48a"/>
+      <stop offset="0.42" stop-color="#c4843c"/>
+      <stop offset="1" stop-color="#6a3c16"/>
+    </radialGradient>
+    <pattern id="grain" width="9" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="3" r="0.8" fill="#3a2410" opacity="0.4"/>
+      <circle cx="6" cy="6" r="0.5" fill="#ffe0b8" opacity="0.4"/>
+    </pattern>
+    <clipPath id="ball">
+      <ellipse cx="320" cy="186" rx="198" ry="112" transform="rotate(16 320 186)"/>
+    </clipPath>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <rect width="640" height="400" fill="url(#wash)"/>
+  <rect x="16" y="16" width="608" height="368" fill="none" stroke="#FFB81C" stroke-width="2.5"/>
+  <ellipse cx="324" cy="304" rx="180" ry="15" fill="#140208" opacity="0.4"/>
+  <g clip-path="url(#ball)">
+    <ellipse cx="320" cy="186" rx="198" ry="112" fill="url(#leather)" transform="rotate(16 320 186)"/>
+    <ellipse cx="320" cy="186" rx="198" ry="112" fill="url(#grain)" transform="rotate(16 320 186)"/>
+    <ellipse cx="250" cy="150" rx="70" ry="32" fill="#fff" opacity="0.2" transform="rotate(16 320 186)"/>
+    <ellipse cx="400" cy="220" rx="36" ry="16" fill="#4a280e" opacity="0.28" transform="rotate(16 320 186)"/>
+    <g fill="none" stroke="#4a2c14" stroke-width="3.2" stroke-linecap="round" transform="rotate(16 320 186)">
+      <path d="M160 146c78-22 150-16 220 18"/>
+      <path d="M150 214c86 26 160 16 236-22"/>
+    </g>
+    <g fill="none" stroke="#fff8ee" stroke-linecap="round" transform="rotate(16 320 186)">
+      <path stroke-width="5" d="M320 128v116"/>
+      <path stroke-width="4" d="M300 154h40M298 184h44M300 214h40"/>
+    </g>
+    <path d="M188 214c22-14 30 0 40 5 10 5 6-14 18-10 14 4 12 16 26 10 12-4 20 4 34-2" fill="none" stroke="#FFB81C" stroke-width="4.5" stroke-linecap="round" transform="rotate(16 320 186)"/>
   </g>
-  <text x="36" y="358" fill="#FFB81C" font-family="serif" font-size="28" letter-spacing="6">SAMPLE</text>
+  <text x="36" y="366" fill="#FFB81C" font-family="serif" font-size="22" letter-spacing="4">SAMPLE</text>
 </svg>

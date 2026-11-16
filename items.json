@@ -163,7 +163,7 @@
     "coaCert": "SAMPLE-0012",
     "purchasePrice": 200,
     "estimatedValue": 600,
-    "image": "img/football.svg",
+    "image": "img/football-practice.svg",
     "description": "Sample record of a fictional practice ball. This sample repeats a quarterback already in the vault.",
     "featured": false
   }
