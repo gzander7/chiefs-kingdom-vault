@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <title>Sample gold football illustration</title>
+  <rect width="640" height="400" fill="#5c0a16"/>
+  <rect x="16" y="16" width="608" height="368" fill="none" stroke="#FFB81C" stroke-width="3"/>
+  <g transform="rotate(-16 320 188)">
+    <ellipse cx="320" cy="188" rx="196" ry="104" fill="#c9843a"/>
+    <path fill="none" stroke="#1a0a0c" stroke-width="6" stroke-linecap="round" d="M320 118v140M296 150h48M296 184h48M296 218h48"/>
+  </g>
+  <text x="36" y="358" fill="#FFB81C" font-family="serif" font-size="28" letter-spacing="6">SAMPLE</text>
+</svg>

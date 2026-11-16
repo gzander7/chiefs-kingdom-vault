@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <title>Sample helmet illustration</title>
+  <rect width="640" height="400" fill="#6e1020"/>
+  <rect x="16" y="16" width="608" height="368" fill="none" stroke="#FFB81C" stroke-width="3"/>
+  <g transform="translate(78 36)">
+    <path fill="#f4efe6" d="M118 78c92-46 236-18 286 78 28 54 12 132-64 176-78 46-186 28-236-28-22-24-34-46-34-78V156c0-36 18-66 48-78z"/>
+    <path fill="none" stroke="#1a0a0c" stroke-width="10" stroke-linecap="round" d="M292 124h78c36 0 64 28 64 66M286 164h102c28 0 46 18 46 40M292 204h72"/>
+    <path fill="none" stroke="#1a0a0c" stroke-width="8" stroke-linecap="round" d="M430 150c28 8 40 36 36 64"/>
+    <circle cx="214" cy="176" r="28" fill="#6e1020"/>
+    <circle cx="214" cy="176" r="13" fill="#f4efe6"/>
+  </g>
+  <text x="36" y="358" fill="#FFB81C" font-family="serif" font-size="28" letter-spacing="6">SAMPLE</text>
+</svg>

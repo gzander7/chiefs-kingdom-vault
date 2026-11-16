@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <title>Sample trading card illustration</title>
+  <rect width="640" height="400" fill="#4a0712"/>
+  <rect x="16" y="16" width="608" height="368" fill="none" stroke="#FFB81C" stroke-width="3"/>
+  <rect x="214" y="36" width="212" height="292" rx="12" fill="#E31837" stroke="#FFB81C" stroke-width="8"/>
+  <polygon points="320,78 336,126 386,126 346,156 360,204 320,176 280,204 294,156 254,126 304,126" fill="#FFB81C"/>
+  <text x="320" y="268" text-anchor="middle" fill="#f6f0e6" font-family="serif" font-size="28" letter-spacing="4">SAMPLE</text>
+</svg>
