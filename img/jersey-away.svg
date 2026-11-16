@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <title>Sample away jersey illustration</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5c1020"/>
+      <stop offset="1" stop-color="#2a0810"/>
+    </linearGradient>
+    <radialGradient id="wash" cx="18%" cy="0%" r="75%">
+      <stop offset="0" stop-color="#ff8a96" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ff8a96" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cloth" x1="0.15" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#ff5168"/>
+      <stop offset="0.48" stop-color="#E31837"/>
+      <stop offset="1" stop-color="#8e1226"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <rect width="640" height="400" fill="url(#wash)"/>
+  <rect x="16" y="16" width="608" height="368" fill="none" stroke="#FFB81C" stroke-width="2.5"/>
+  <ellipse cx="320" cy="344" rx="168" ry="13" fill="#140208" opacity="0.45"/>
+  <path fill="url(#cloth)" d="M228 108c28 30 58 44 92 44s64-14 92-44l78 34c-28 28-46 40-58 34l-16-12v158H224V164l-16 12c-12 6-30-6-58-34z"/>
+  <path fill="#fff" opacity="0.14" d="M236 156c40-30 90-24 130 8-30 8-70 6-110-2-10-2-18-4-20-6z"/>
+  <path fill="#4a0612" opacity="0.28" d="M224 186c20 16 16 84 6 132h-6V180z"/>
+  <path fill="none" stroke="#4a0612" stroke-width="14" stroke-linecap="round" opacity="0.28" d="M252 178c8 46 4 96-2 138"/>
+  <path fill="none" stroke="#4a0612" stroke-width="14" stroke-linecap="round" opacity="0.22" d="M388 176c-6 48-2 98 4 140"/>
+  <path fill="none" stroke="#FFB81C" stroke-width="14" stroke-linecap="round" d="M250 118c22 26 48 38 70 38s48-12 70-38"/>
+  <path fill="#FFB81C" d="M300 124l20 40 20-40z"/>
+  <path fill="none" stroke="#FFB81C" stroke-width="11" stroke-linecap="round" d="M156 136l46 28"/>
+  <path fill="none" stroke="#FFB81C" stroke-width="11" stroke-linecap="round" d="M484 136l-46 28"/>
+  <path fill="none" stroke="#FFB81C" stroke-width="7" d="M224 302h192"/>
+  <text x="324" y="258" text-anchor="middle" font-family="serif" font-size="108" font-weight="700" fill="#6a0816" opacity="0.35">88</text>
+  <text x="320" y="254" text-anchor="middle" font-family="serif" font-size="108" font-weight="700" fill="#FFB81C">88</text>
+  <path fill="none" stroke="#fff6d0" stroke-width="4" stroke-linecap="round" d="M244 284c18-12 26 0 34 6 8 6 4-12 18-10 14 2 10 16 24 10 12-4 18 4 30 0"/>
+  <text x="36" y="366" fill="#FFB81C" font-family="serif" font-size="22" letter-spacing="4">SAMPLE</text>
+</svg>
