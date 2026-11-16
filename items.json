@@ -9,7 +9,7 @@
     "coaCert": "SAMPLE-0001",
     "purchasePrice": 400,
     "estimatedValue": 2000,
-    "image": "img/helmet.svg",
+    "image": "img/sample-0001-white-shell-helmet.svg",
     "description": "Sample record of a fictional sideline helmet. This sample is not a real autograph.",
     "featured": true
   },
@@ -23,7 +23,7 @@
     "coaCert": "SAMPLE-0002",
     "purchasePrice": 300,
     "estimatedValue": 900,
-    "image": "img/jersey.svg",
+    "image": "img/sample-0002-jersey-87.svg",
     "description": "Sample record of a fictional home jersey. This sample certificate is a placeholder.",
     "featured": true
   },
@@ -37,7 +37,7 @@
     "coaCert": "SAMPLE-0003",
     "purchasePrice": 200,
     "estimatedValue": 500,
-    "image": "img/football.svg",
+    "image": "img/sample-0003-game-football.svg",
     "description": "Sample record of a fictional game ball. This sample is not game-used.",
     "featured": false
   },
@@ -51,7 +51,7 @@
     "coaCert": "SAMPLE-0004",
     "purchasePrice": 100,
     "estimatedValue": 250,
-    "image": "img/photo.svg",
+    "image": "img/sample-0004-sideline-portrait.svg",
     "description": "Sample record of a fictional signed photo. This sample uses an illustration, not a photograph.",
     "featured": false
   },
@@ -65,7 +65,7 @@
     "coaCert": "SAMPLE-0005",
     "purchasePrice": 50,
     "estimatedValue": 200,
-    "image": "img/card.svg",
+    "image": "img/sample-0005-rookie-trading-card.svg",
     "description": "Sample record of a fictional trading card. This sample is here for the Hall of Fame layout.",
     "featured": true
   },
@@ -79,7 +79,7 @@
     "coaCert": "SAMPLE-0006",
     "purchasePrice": 800,
     "estimatedValue": 2400,
-    "image": "img/helmet-gold.svg",
+    "image": "img/sample-0006-throwback-helmet.svg",
     "description": "Sample record of a fictional throwback helmet. This sample stands in for a display piece.",
     "featured": true
   },
@@ -93,7 +93,7 @@
     "coaCert": "SAMPLE-0007",
     "purchasePrice": 250,
     "estimatedValue": 400,
-    "image": "img/jersey-away.svg",
+    "image": "img/sample-0007-jersey-88.svg",
     "description": "Sample record of a fictional away jersey. This sample is not a real autograph.",
     "featured": false
   },
@@ -107,7 +107,7 @@
     "coaCert": "SAMPLE-0008",
     "purchasePrice": 500,
     "estimatedValue": 1000,
-    "image": "img/football-gold.svg",
+    "image": "img/sample-0008-vintage-football.svg",
     "description": "Sample record of a fictional championship ball. This sample uses made-up dates and values.",
     "featured": true
   },
@@ -121,7 +121,7 @@
     "coaCert": "SAMPLE-0009",
     "purchasePrice": 75,
     "estimatedValue": 150,
-    "image": "img/photo-alt.svg",
+    "image": "img/sample-0009-rushing-portrait.svg",
     "description": "Sample record of a fictional rushing portrait. This sample is an illustration only.",
     "featured": false
   },
@@ -135,7 +135,7 @@
     "coaCert": "SAMPLE-0010",
     "purchasePrice": 40,
     "estimatedValue": 80,
-    "image": "img/card-alt.svg",
+    "image": "img/sample-0010-running-back-trading-card.svg",
     "description": "Sample record of a fictional trading card. This sample cert number is a placeholder.",
     "featured": false
   },
@@ -149,7 +149,7 @@
     "coaCert": "SAMPLE-0011",
     "purchasePrice": 150,
     "estimatedValue": 120,
-    "image": "img/program.svg",
+    "image": "img/sample-0011-game-program.svg",
     "description": "Sample record of a fictional game program. This sample is priced below what was paid.",
     "featured": false
   },
@@ -163,7 +163,7 @@
     "coaCert": "SAMPLE-0012",
     "purchasePrice": 200,
     "estimatedValue": 600,
-    "image": "img/football-practice.svg",
+    "image": "img/sample-0012-practice-football.svg",
     "description": "Sample record of a fictional practice ball. This sample repeats a quarterback already in the vault.",
     "featured": false
   }

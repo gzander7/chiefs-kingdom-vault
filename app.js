@@ -44,13 +44,17 @@
     return node;
   }
 
-  function figureFor(item, showBadge) {
+  function figureFor(item, showBadge, lazy) {
     var figure = document.createElement('figure');
     var img = document.createElement('img');
     if (item.image) img.src = item.image;
     img.alt = 'Sample illustration for ' + (item.title || 'a collection piece');
     img.width = 640;
     img.height = 400;
+    if (lazy) {
+      img.loading = 'lazy';
+      img.decoding = 'async';
+    }
     figure.appendChild(img);
     if (showBadge) figure.appendChild(el('p', 'badge', 'Hall of Fame'));
     return figure;
@@ -205,7 +209,7 @@
       var glare = el('div', 'glare');
       glare.setAttribute('aria-hidden', 'true');
       var body = el('div', 'card-body');
-      body.appendChild(figureFor(item, item.featured === true));
+      body.appendChild(figureFor(item, item.featured === true, true));
       body.appendChild(copyBlock(item, 'h3'));
       article.appendChild(glare);
       article.appendChild(body);
@@ -256,7 +260,7 @@
       var item = featured[index];
       count.textContent = 'Piece ' + (index + 1) + ' of ' + featured.length;
       var layout = el('div', 'spotlight-layout');
-      layout.appendChild(figureFor(item, false));
+      layout.appendChild(figureFor(item, false, false));
       layout.appendChild(copyBlock(item, 'h3', true));
       body.replaceChildren(layout);
       var canMove = featured.length > 1;
