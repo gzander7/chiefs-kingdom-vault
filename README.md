@@ -31,7 +31,7 @@ The file is an array. Each object is one piece:
 | `coaCert` | string | The certificate number. Sample pieces use placeholders such as `SAMPLE-0001` |
 | `purchasePrice` | number | What was paid, in US dollars |
 | `estimatedValue` | number | The current estimate, in US dollars |
-| `image` | string | A relative path under `img/`, such as `img/helmet.svg` |
+| `image` | string | A relative path under `img/`, such as `img/sample-0001-white-shell-helmet.svg` |
 | `description` | string | One or two sentences. Say that a piece is a sample when it is not a real item |
 | `featured` | boolean | `true` includes the piece in the Hall of Fame. Anything else leaves it out |
 
@@ -48,13 +48,13 @@ Example:
   "coaCert": "SAMPLE-0013",
   "purchasePrice": 120,
   "estimatedValue": 180,
-  "image": "img/helmet.svg",
+  "image": "img/sample-0001-white-shell-helmet.svg",
   "description": "Sample record of a fictional mini helmet. This sample is not a real autograph.",
   "featured": false
 }
 ```
 
-Put image files in `img/` and commit them with the repo. Point `image` at a relative path. Do not hotlink images, and do not add team logos or player photographs.
+Put image files in `img/` and commit them with the repo. Point `image` at a relative path. Do not hotlink images, and do not add team logos or player photographs. The sample plates repeat the same internal SVG ids, so leave each file as its own image and let the page load it with an `img` element. Pasting several of those files into the page would make those ids collide.
 
 `featured: true` adds a piece to the Hall of Fame, which cycles those pieces until a visitor hovers or focuses the spotlight. Previous and Next move through the same list. Vault totals, the count of pieces per player, and the best deal are calculated in the browser. The best deal is the piece with the largest current estimate divided by the purchase price. A purchase price of zero is left out of that comparison.
 
