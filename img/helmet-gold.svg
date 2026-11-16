@@ -2,12 +2,12 @@
   <title>Sample gold helmet illustration</title>
   <rect width="640" height="400" fill="#4a0712"/>
   <rect x="16" y="16" width="608" height="368" fill="none" stroke="#FFB81C" stroke-width="3"/>
-  <g transform="translate(78 36)">
-    <path fill="#FFB81C" d="M118 78c92-46 236-18 286 78 28 54 12 132-64 176-78 46-186 28-236-28-22-24-34-46-34-78V156c0-36 18-66 48-78z"/>
-    <path fill="none" stroke="#1a0a0c" stroke-width="10" stroke-linecap="round" d="M292 124h78c36 0 64 28 64 66M286 164h102c28 0 46 18 46 40M292 204h72"/>
-    <path fill="none" stroke="#1a0a0c" stroke-width="8" stroke-linecap="round" d="M430 150c28 8 40 36 36 64"/>
-    <circle cx="214" cy="176" r="28" fill="#6e1020"/>
-    <circle cx="214" cy="176" r="13" fill="#FFB81C"/>
+  <g transform="translate(46 42)">
+    <path fill="#FFB81C" d="M78 148c6-82 84-124 176-124 112 0 186 64 206 142 16 58-4 118-62 152-66 40-158 34-214-8-30-22-50-56-62-96-8-30-24-48-44-66z"/>
+    <path fill="none" stroke="#1a0a0c" stroke-width="16" stroke-linecap="round" d="M340 108h128M326 156h158M340 204h128"/>
+    <path fill="none" stroke="#1a0a0c" stroke-width="14" stroke-linecap="round" d="M466 92c46 20 58 78 42 132"/>
+    <circle cx="214" cy="164" r="20" fill="#6e1020"/>
+    <circle cx="214" cy="164" r="9" fill="#FFB81C"/>
   </g>
   <text x="36" y="358" fill="#f6f0e6" font-family="serif" font-size="28" letter-spacing="6">SAMPLE</text>
 </svg>

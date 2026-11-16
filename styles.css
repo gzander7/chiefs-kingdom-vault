@@ -36,11 +36,6 @@ body {
   line-height: 1.45;
 }
 
-body,
-.page {
-  overflow-x: hidden;
-}
-
 #backdrop {
   position: fixed;
   inset: 0;
@@ -56,6 +51,10 @@ body,
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 1.25rem 0 2.5rem;
+}
+
+#collection {
+  scroll-margin-top: 0.75rem;
 }
 
 main {
