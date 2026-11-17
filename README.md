@@ -1,6 +1,6 @@
 # Chiefs Kingdom Collection Vault
 
-A single-page museum gallery of fictional signed Kansas City Chiefs memorabilia. The page is plain HTML, CSS, and JavaScript. There is no build step and there are no dependencies. Every piece shipped in this repo is sample data.
+Gage's signed Chiefs collection. The page is plain HTML, CSS, and JavaScript. There is no build step and there are no dependencies.
 
 ## Local preview
 
@@ -22,48 +22,31 @@ The file is an array. Each object is one piece:
 
 | Field | Type | What to put |
 | --- | --- | --- |
-| `id` | string | A unique id, such as `sample-0013` |
+| `id` | string | A unique id |
 | `title` | string | The name on the card and in the Hall of Fame |
-| `signer` | string | The player who signed the piece. Vault totals group pieces by this name |
-| `category` | string | A short label such as `helmet`, `jersey`, `football`, `photo`, `card`, or `program` |
-| `yearSigned` | number | The year the signature was added |
-| `coaAuthority` | string | Who issued the certificate of authenticity |
-| `coaCert` | string | The certificate number. Sample pieces use placeholders such as `SAMPLE-0001` |
-| `purchasePrice` | number | What was paid, in US dollars |
-| `estimatedValue` | number | The current estimate, in US dollars |
-| `image` | string | A relative path under `img/`, such as `img/sample-0001-white-shell-helmet.svg` |
-| `description` | string | One or two sentences. Say that a piece is a sample when it is not a real item |
+| `signer` | string | Who signed the piece. Separate two names with `&` so each player is counted |
+| `category` | string | A short label such as `jersey` or `card` |
+| `yearSigned` | number | Optional. The year the signature was added. Omitted fields are not shown |
+| `coaAuthority` | string | Optional. Who issued the certificate, or the card company for an on-card auto |
+| `coaCert` | string | Optional. The certificate number. Leave it out when there is none |
+| `purchasePrice` | number | Optional. What was paid, in US dollars |
+| `estimatedValue` | number | Optional. The current estimate, in US dollars |
+| `image` | string | A relative path under `img/` |
+| `description` | string | One or two factual sentences |
 | `featured` | boolean | `true` includes the piece in the Hall of Fame. Anything else leaves it out |
 
-Example:
+`SHOW_PRICES` at the top of `app.js` defaults to `false`. While it is false, or while no piece has both a purchase price and an estimated value, the page hides paid, current value, gain, the money totals, and the best deal. Piece count and pieces per player stay visible.
 
-```json
-{
-  "id": "sample-0013",
-  "title": "Sample mini helmet",
-  "signer": "Patrick Mahomes",
-  "category": "helmet",
-  "yearSigned": 2024,
-  "coaAuthority": "Sample Authentication Bureau",
-  "coaCert": "SAMPLE-0013",
-  "purchasePrice": 120,
-  "estimatedValue": 180,
-  "image": "img/sample-0001-white-shell-helmet.svg",
-  "description": "Sample record of a fictional mini helmet. This sample is not a real autograph.",
-  "featured": false
-}
-```
+Put image files in `img/` and commit them with the repo. Point `image` at a relative path. Do not hotlink images, and do not add team logos or player photographs. Load each illustration with an `img` element rather than pasting the SVG markup into the page.
 
-Put image files in `img/` and commit them with the repo. Point `image` at a relative path. Do not hotlink images, and do not add team logos or player photographs. The sample plates repeat the same internal SVG ids, so leave each file as its own image and let the page load it with an `img` element. Pasting several of those files into the page would make those ids collide.
-
-`featured: true` adds a piece to the Hall of Fame, which cycles those pieces until a visitor hovers or focuses the spotlight. Previous and Next move through the same list. Vault totals, the count of pieces per player, and the best deal are calculated in the browser. The best deal is the piece with the largest current estimate divided by the purchase price. A purchase price of zero is left out of that comparison.
+`featured: true` adds a piece to the Hall of Fame, which cycles those pieces until a visitor hovers or focuses the spotlight. Previous and Next move through the same list. The order in `items.json` is the spotlight order.
 
 If `items.json` cannot be fetched, the page shows a message instead of an empty gallery.
 
 ## GitHub Pages
 
-`.github/workflows/pages.yml` deploys this folder with GitHub Actions on every push to `main`. In the repository settings, open **Settings > Pages** and set **Source** to **GitHub Actions** before that workflow can publish.
+Pages publishes this folder from a branch. In the repository settings, open **Settings > Pages**, set **Source** to **Deploy from a branch**, and choose the branch that holds the site. There is no GitHub Actions workflow.
 
 ## Disclaimer
 
-This is an unofficial demo. It is not affiliated with the Kansas City Chiefs, the NFL, or any player. The sample certificates are not real certificates of authenticity.
+This is an unofficial collection. It is not affiliated with the Kansas City Chiefs, the NFL, or any player.

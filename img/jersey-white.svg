@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <title>White football jersey, number 1</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8d1830"/>
+      <stop offset="1" stop-color="#3c0711"/>
+    </linearGradient>
+    <linearGradient id="cloth" x1="0.15" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#fffdf8"/>
+      <stop offset="0.55" stop-color="#f4eee6"/>
+      <stop offset="1" stop-color="#ddd2c4"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <rect x="16" y="16" width="608" height="368" fill="none" stroke="#FFB81C" stroke-width="2.5"/>
+  <ellipse cx="320" cy="344" rx="168" ry="13" fill="#140208" opacity="0.4"/>
+  <path fill="url(#cloth)" d="M228 108c28 30 58 44 92 44s64-14 92-44l78 34c-28 28-46 40-58 34l-16-12v158H224V164l-16 12c-12 6-30-6-58-34z"/>
+  <path fill="#000" opacity="0.06" d="M224 186c18 14 14 80 6 128h-6V178z"/>
+  <path fill="none" stroke="#c9baa8" stroke-width="12" stroke-linecap="round" opacity="0.7" d="M250 176c10 44 6 96 0 140"/>
+  <path fill="none" stroke="#c9baa8" stroke-width="12" stroke-linecap="round" opacity="0.55" d="M390 176c-8 46-4 98 2 140"/>
+  <path fill="none" stroke="#E31837" stroke-width="12" stroke-linecap="round" d="M250 118c22 26 48 38 70 38s48-12 70-38"/>
+  <path fill="#E31837" d="M304 122l16 34 16-34z"/>
+  <path fill="none" stroke="#E31837" stroke-width="9" stroke-linecap="round" d="M158 138l44 26"/>
+  <path fill="none" stroke="#E31837" stroke-width="9" stroke-linecap="round" d="M482 138l-44 26"/>
+  <path fill="#9a1428" opacity="0.2" d="M332 168h26v18h-16v78h-22v-18h12V186h-12z"/>
+  <path fill="#E31837" d="M328 164h26v18h-16v78h-22v-18h12V182h-12z"/>
+  <path fill="none" stroke="#c9baa8" stroke-width="6" d="M224 304h192"/>
+</svg>
