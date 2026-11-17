@@ -1,32 +1,32 @@
 [
   {
-    "id": "mahomes-kelce-paramount-pairings",
-    "title": "Paramount Pairings dual autograph card",
-    "signer": "Patrick Mahomes & Travis Kelce",
+    "id": "paramount-pairings-kelce-mahomes",
+    "title": "2025 Topps Signature Class Paramount Pairings",
+    "signer": "Travis Kelce & Patrick Mahomes",
     "category": "card",
     "coaAuthority": "Topps",
-    "image": "img/paramount-pairings.svg",
-    "description": "Topps Signature Series Paramount Pairings dual autograph card, numbered 82/100.",
+    "image": "img/paramount-pairings-kelce-mahomes.png",
+    "description": "Purple Parallel, PP-11, numbered 82/100.",
     "featured": true
   },
   {
-    "id": "emmet-johnson-jersey",
-    "title": "Signed Emmet Johnson jersey, black",
-    "signer": "Emmet Johnson",
+    "id": "emmett-johnson-jersey",
+    "title": "Signed Emmett Johnson #10 jersey, black",
+    "signer": "Emmett Johnson",
     "category": "jersey",
     "coaAuthority": "Meta-Bilia",
-    "image": "img/jersey-black.svg",
-    "description": "Signed black jersey, acquired through Chiefs Bids with Meta-Bilia authentication.",
+    "image": "img/emmett-johnson-10-black.png",
+    "description": "Signed black No. 10 jersey, acquired through Chiefs Bids with Meta-Bilia authentication.",
     "featured": true
   },
   {
     "id": "xavier-worthy-jersey",
-    "title": "Signed Xavier Worthy jersey, white",
+    "title": "Signed Xavier Worthy #1 jersey, white",
     "signer": "Xavier Worthy",
     "category": "jersey",
     "coaAuthority": "Meta-Bilia",
-    "image": "img/jersey-white.svg",
-    "description": "Signed white jersey, acquired through Chiefs Bids with Meta-Bilia authentication.",
+    "image": "img/xavier-worthy-1-white.png",
+    "description": "Signed white No. 1 jersey, acquired through Chiefs Bids with Meta-Bilia authentication.",
     "featured": true
   }
 ]
