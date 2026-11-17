@@ -1,6 +1,7 @@
 (function () {
   'use strict';
 
+  var SHOW_PRICES = false;
   var SPOTLIGHT_MS = 5000;
   var FETCH_ERROR = 'The collection could not be loaded from items.json. Opening this page as a file (file://) blocks that fetch. From the project folder, run python3 -m http.server and open the local URL it prints.';
 
@@ -48,7 +49,7 @@
     var figure = document.createElement('figure');
     var img = document.createElement('img');
     if (item.image) img.src = item.image;
-    img.alt = 'Sample illustration for ' + (item.title || 'a collection piece');
+    img.alt = 'Illustration of ' + (item.title || 'a collection piece');
     img.width = 640;
     img.height = 400;
     if (lazy) {
@@ -60,11 +61,25 @@
     return figure;
   }
 
+  function hasPrices(item) {
+    return Number.isFinite(Number(item.purchasePrice)) && Number.isFinite(Number(item.estimatedValue));
+  }
+
+  function playerNames(signer) {
+    var text = String(signer || '').trim();
+    if (!text) return ['Unknown signer'];
+    var parts = text.split(/\s*&\s*/).map(function (part) { return part.trim(); }).filter(Boolean);
+    return parts.length ? parts : [text];
+  }
+
   function coaBlock(item) {
+    var authority = item.coaAuthority ? String(item.coaAuthority).trim() : '';
+    var cert = item.coaCert ? String(item.coaCert).trim() : '';
+    if (!authority && !cert) return null;
     var block = el('p', 'coa');
     block.appendChild(el('span', 'coa-label', 'Certificate of authenticity'));
-    block.appendChild(el('span', 'coa-auth', item.coaAuthority || 'Unknown authority'));
-    block.appendChild(el('span', 'cert', item.coaCert || 'No certificate number'));
+    if (authority) block.appendChild(el('span', 'coa-auth', authority));
+    if (cert) block.appendChild(el('span', 'cert', cert));
     return block;
   }
 
@@ -76,32 +91,31 @@
   }
 
   function moneyList(item) {
+    if (!SHOW_PRICES || !hasPrices(item)) return null;
     var paid = Number(item.purchasePrice);
     var current = Number(item.estimatedValue);
-    var list = el('dl', 'values');
+    var gain = current - paid;
     var changeLabel = 'Change';
-    var changeText = '—';
     var changeClass = '';
-    if (Number.isFinite(paid) && Number.isFinite(current)) {
-      var gain = current - paid;
-      if (gain > 0) {
-        changeLabel = 'Gain';
-        changeClass = 'gain';
-      } else if (gain < 0) {
-        changeLabel = 'Loss';
-        changeClass = 'loss';
-      }
-      changeText = signedMoney(gain);
+    if (gain > 0) {
+      changeLabel = 'Gain';
+      changeClass = 'gain';
+    } else if (gain < 0) {
+      changeLabel = 'Loss';
+      changeClass = 'loss';
     }
+    var list = el('dl', 'values');
     list.appendChild(valuePair('Paid', money(paid), ''));
     list.appendChild(valuePair('Now', money(current), ''));
-    list.appendChild(valuePair(changeLabel, changeText, changeClass));
+    list.appendChild(valuePair(changeLabel, signedMoney(gain), changeClass));
     return list;
   }
 
   function copyBlock(item, heading, markSpotlight) {
     var copy = el('div', 'card-copy');
-    var meta = el('p', 'meta', categoryLabel(item.category) + ' · Signed ' + (item.yearSigned != null ? item.yearSigned : '—'));
+    var metaText = categoryLabel(item.category);
+    if (item.yearSigned != null && item.yearSigned !== '') metaText += ' · Signed ' + item.yearSigned;
+    var meta = el('p', 'meta', metaText);
     var title = el(heading, '', item.title || 'Untitled piece');
     if (markSpotlight) title.id = 'spotlight-title';
     var signer = el('p', 'signer', item.signer || 'Unknown signer');
@@ -110,8 +124,10 @@
     copy.appendChild(title);
     copy.appendChild(signer);
     copy.appendChild(desc);
-    copy.appendChild(coaBlock(item));
-    copy.appendChild(moneyList(item));
+    var coa = coaBlock(item);
+    var prices = moneyList(item);
+    if (coa) copy.appendChild(coa);
+    if (prices) copy.appendChild(prices);
     return copy;
   }
 
@@ -153,9 +169,10 @@
     items.forEach(function (item) {
       var paidN = Number(item.purchasePrice);
       var valueN = Number(item.estimatedValue);
-      var name = item.signer || 'Unknown signer';
-      counts.set(name, (counts.get(name) || 0) + 1);
-      if (!Number.isFinite(paidN) || !Number.isFinite(valueN)) return;
+      playerNames(item.signer).forEach(function (name) {
+        counts.set(name, (counts.get(name) || 0) + 1);
+      });
+      if (!SHOW_PRICES || !hasPrices(item)) return;
       paid += paidN;
       current += valueN;
       if (paidN > 0) {
@@ -168,13 +185,18 @@
     });
 
     var gain = current - paid;
-    document.getElementById('stat-paid').textContent = money(paid);
-    document.getElementById('stat-value').textContent = money(current);
-    var gainEl = document.getElementById('stat-gain');
-    gainEl.textContent = signedMoney(gain);
-    gainEl.classList.toggle('gain', gain > 0);
-    gainEl.classList.toggle('loss', gain < 0);
-    document.getElementById('stat-gain-label').textContent = gain < 0 ? 'Overall loss' : 'Overall gain';
+    var showMoney = SHOW_PRICES && items.some(hasPrices);
+    document.getElementById('money-stats').hidden = !showMoney;
+    document.getElementById('stat-count').textContent = items.length + (items.length === 1 ? ' piece' : ' pieces');
+    if (showMoney) {
+      document.getElementById('stat-paid').textContent = money(paid);
+      document.getElementById('stat-value').textContent = money(current);
+      var gainEl = document.getElementById('stat-gain');
+      gainEl.textContent = signedMoney(gain);
+      gainEl.classList.toggle('gain', gain > 0);
+      gainEl.classList.toggle('loss', gain < 0);
+      document.getElementById('stat-gain-label').textContent = gain < 0 ? 'Overall loss' : 'Overall gain';
+    }
 
     var rows = Array.from(counts.entries()).sort(function (a, b) {
       return b[1] - a[1] || a[0].localeCompare(b[0], 'en');
@@ -191,12 +213,11 @@
       tbody.appendChild(tr);
     });
 
-    var bestText = document.getElementById('stat-best');
-    if (!best) {
-      bestText.textContent = 'No priced pieces to compare.';
-      return;
+    var bestPanel = document.getElementById('best-deal');
+    bestPanel.hidden = !showMoney || !best;
+    if (showMoney && best) {
+      document.getElementById('stat-best').textContent = best.item.title + ', signed by ' + best.item.signer + ', is valued at ' + best.ratio.toFixed(2) + '× what was paid (' + money(best.item.purchasePrice) + ' to ' + money(best.item.estimatedValue) + ').';
     }
-    bestText.textContent = best.item.title + ', signed by ' + best.item.signer + ', is valued at ' + best.ratio.toFixed(2) + '× what was paid (' + money(best.item.purchasePrice) + ' to ' + money(best.item.estimatedValue) + ').';
   }
 
   function renderCards(items) {

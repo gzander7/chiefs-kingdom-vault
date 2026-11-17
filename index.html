@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A museum-style gallery of fictional signed Kansas City Chiefs memorabilia. Every piece in this vault is sample data.">
+  <meta name="description" content="Gage's signed Chiefs collection.">
   <meta name="theme-color" content="#4a0712">
   <title>Chiefs Kingdom Collection Vault</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -15,9 +15,8 @@
   <div class="page">
     <a class="skip-link" href="#collection">Skip to collection</a>
     <header class="panel site-header">
-      <p class="eyebrow">Demonstration archive</p>
       <h1>Chiefs Kingdom Collection Vault</h1>
-      <p class="lede">A museum gallery of fictional signed memorabilia. Certificates, prices, and signatures in this vault are sample records for the display, not real collectibles.</p>
+      <p class="lede">Gage's signed Chiefs collection.</p>
     </header>
     <main>
       <p id="load-error" class="error" role="alert" hidden></p>
@@ -45,20 +44,21 @@
       </section>
       <section id="stats" class="panel" aria-labelledby="stats-heading">
         <div class="section-head">
-          <h2 id="stats-heading">Vault totals</h2>
+          <h2 id="stats-heading">Collection</h2>
+          <p id="stat-count" class="section-note"></p>
         </div>
-        <div class="stat-grid">
+        <div class="stat-grid" id="money-stats" hidden>
           <p class="stat">
             <span>Current value</span>
-            <strong id="stat-value">—</strong>
+            <strong id="stat-value"></strong>
           </p>
           <p class="stat">
             <span>Total paid</span>
-            <strong id="stat-paid">—</strong>
+            <strong id="stat-paid"></strong>
           </p>
           <p class="stat">
             <span id="stat-gain-label">Overall gain</span>
-            <strong id="stat-gain">—</strong>
+            <strong id="stat-gain"></strong>
           </p>
         </div>
         <h3 id="players-heading">Pieces per player</h3>
@@ -71,9 +71,9 @@
           </thead>
           <tbody id="player-counts"></tbody>
         </table>
-        <div class="best">
+        <div class="best" id="best-deal" hidden>
           <h3 id="best-heading">Best deal</h3>
-          <p id="stat-best">—</p>
+          <p id="stat-best"></p>
         </div>
       </section>
       <section id="collection" class="panel" tabindex="-1" aria-labelledby="collection-heading">
@@ -86,7 +86,7 @@
       </section>
     </main>
     <footer class="panel site-footer">
-      <p>Sample data only. This unofficial demo is not affiliated with the Kansas City Chiefs, the NFL, or any player. Preview locally with <code>python3 -m http.server</code>. A <code>file://</code> address cannot fetch items.json.</p>
+      <p>Unofficial collection. Not affiliated with the Kansas City Chiefs, the NFL, or any player. Preview locally with <code>python3 -m http.server</code>. A <code>file://</code> address cannot fetch items.json.</p>
     </footer>
   </div>
   <script src="app.js"></script>
